@@ -1,4 +1,4 @@
-package com.advices;
+package com.advice;
 
 import java.time.LocalDateTime;
 import java.util.Date;

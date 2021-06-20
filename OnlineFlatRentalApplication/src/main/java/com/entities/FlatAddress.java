@@ -1,24 +1,24 @@
 package com.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
-
 @Entity
-public class FlatAdress {
+public class FlatAddress {
 	
 	@Id
+	@GeneratedValue
 	private int houseNo;
 	private String street;
 	private String city;
 	private String state;
 	private int pin;
 	private String country;
-	
-	
-	
-	public FlatAdress(int houseNo, String street, String city, String state, int pin, String country) {
+	public FlatAddress() {
+		super();
+	}
+	public FlatAddress(int houseNo, String street, String city, String state, int pin, String country) {
 		super();
 		this.houseNo = houseNo;
 		this.street = street;
@@ -26,25 +26,7 @@ public class FlatAdress {
 		this.state = state;
 		this.pin = pin;
 		this.country = country;
-//		this.tenant = tenant;
 	}
-	
-	
-	
-	
-	
-	
-	
-	public FlatAdress() {
-		super();
-	}
-
-
-
-
-
-
-
 	public int getHouseNo() {
 		return houseNo;
 	}
@@ -81,14 +63,6 @@ public class FlatAdress {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
 	public String toString() {
 		return "FlatAdress [houseNo=" + houseNo + ", street=" + street + ", city=" + city + ", state=" + state
@@ -96,9 +70,5 @@ public class FlatAdress {
 	}
 	
 	
-	
-	
-	
-	
-}
 
+}

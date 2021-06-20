@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.entities.User;
-import com.exception.UserNotFoundException;
+import com.advice.UserNotFoundException;
 import com.service.IUserService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 

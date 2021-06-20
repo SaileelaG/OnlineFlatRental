@@ -1,71 +1,53 @@
 package com.entities;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
 @Entity
-public class FlatBooking {
-	
+@Table(name="MyFlatBooking")
+	public class FlatBooking {
 	@Id
-	@GeneratedValue
-	private int	bookingNo;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull
+		private long bookingId;
+		/*
+		 * // @OneToOne //@JoinColumn(name = "flatId") //private Flat flat; // @OneToOne
+		 * //@JoinColumn(name = "tenant_id") //private Tenant tenantId;
+		 */	    
+	    @NotNull
+		private String bookingFromDate;
+	    @NotNull
+		private String bookingToDate;
+		public long getBookingId() {
+			return bookingId;
+		}
+		public void setBookingId(long bookingId) {
+			this.bookingId = bookingId;
+		}
+		public String getBookingFromDate() {
+			return bookingFromDate;
+		}
+		public void setBookingFromDate(String bookingFromDate) {
+			this.bookingFromDate = bookingFromDate;
+		}
+		public String getBookingToDate() {
+			return bookingToDate;
+		}
+		public void setBookingToDate(String bookingToDate) {
+			this.bookingToDate = bookingToDate;
+		}
+		@Override
+		public String toString() {
+			return "FlatBooking [bookingId=" + bookingId + ", bookingFromDate=" + bookingFromDate + ", bookingToDate="
+					+ bookingToDate + "]";
+		}
 	
-	@OneToOne
-	@JoinColumn(name = "flatId")
-	private Flat flat;
-	@OneToOne
-	@JoinColumn(name = "tenant_id")
-	private Tenant tenantId;
-	private LocalDate bookingFromDate;
-	private LocalDate bookingToDate;
-	public FlatBooking(int bookingNo, Flat flat, Tenant tenantId, LocalDate bookingFromDate, LocalDate bookingToDate) {
-		super();
-		this.bookingNo = bookingNo;
-		this.flat = flat;
-		this.tenantId = tenantId;
-		this.bookingFromDate = bookingFromDate;
-		this.bookingToDate = bookingToDate;
-	}
-	public int getBookingNo() {
-		return bookingNo;
-	}
-	public void setBookingNo(int bookingNo) {
-		this.bookingNo = bookingNo;
-	}
-	public Flat getFlat() {
-		return flat;
-	}
-	public void setFlat(Flat flat) {
-		this.flat = flat;
-	}
-	public Tenant getTenantId() {
-		return tenantId;
-	}
-	public void setTenantId(Tenant tenantId) {
-		this.tenantId = tenantId;
-	}
-	public LocalDate getBookingFromDate() {
-		return bookingFromDate;
-	}
-	public void setBookingFromDate(LocalDate bookingFromDate) {
-		this.bookingFromDate = bookingFromDate;
-	}
-	public LocalDate getBookingToDate() {
-		return bookingToDate;
-	}
-	public void setBookingToDate(LocalDate bookingToDate) {
-		this.bookingToDate = bookingToDate;
-	}
-	@Override
-	public String toString() {
-		return "FlatBooking [bookingNo=" + bookingNo + ", flat=" + flat + ", tenantId=" + tenantId
-				+ ", bookingFromDate=" + bookingFromDate + ", bookingToDate=" + bookingToDate + "]";
-	}
-	
-	
+		
+		
 }

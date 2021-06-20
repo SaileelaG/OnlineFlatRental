@@ -3,7 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.entities.User;
-import com.exception.UserNotFoundException;
+import com.advice.UserNotFoundException;
 
 public interface IUserService {
 	public User viewUser(int id) throws UserNotFoundException;

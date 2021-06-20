@@ -1,4 +1,4 @@
-package com.service;
+package com.implementation;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -8,8 +8,9 @@ import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.entities.User;
-import com.exception.UserNotFoundException;
+import com.advice.UserNotFoundException;
 import com.repository.IUserRepository;
+import com.service.IUserService;
 
 @Service
 public class UserServiceImpl implements IUserService {

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.entities.User;
-import com.exception.UserNotFoundException;
+import com.advice.UserNotFoundException;
 
 @Repository
 public interface IUserRepository extends JpaRepository<User,Integer> {
